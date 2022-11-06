@@ -12,4 +12,4 @@ class Professor(models.Model):
     formacao = models.CharField(max_length=20, blank=False, null=True)
 
     def __str__(self) -> str:
-        return self.nome_professor
+        return str(self.nome_professor)

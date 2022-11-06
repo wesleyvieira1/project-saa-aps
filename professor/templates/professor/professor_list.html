@@ -1,0 +1,22 @@
+{% include 'main/base.html' %}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Nome do Professor</th>
+            <th scope="col">Grau de Formação</th>
+            <th scope="col">Formação</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for professor in object_list %}
+        <tr>
+            <td>{{professor.nome_professor}}</td>
+            <td>{{professor.grau_formacao}}</td> 
+            <td>{{professor.formacao}}</td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>

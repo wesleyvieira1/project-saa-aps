@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'usuario',
     'base',
+    'usuario',
+    'professor',
+    'disciplina'
     #'bootstrapform'
 ]
 

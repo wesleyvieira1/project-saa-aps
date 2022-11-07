@@ -7,7 +7,7 @@ class Professor(models.Model):
         ('2','Mestrado'),
         ('2','Doutorado'),
     )
-    nome_professor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    nome_professor = models.ForeignKey(Usuario, on_delete=models.CASCADE, limit_choices_to={'departamento': 2})
     grau_formacao = models.CharField(max_length=10, blank=False, null=True, choices=choices_grau)
     formacao = models.CharField(max_length=20, blank=False, null=True)
 

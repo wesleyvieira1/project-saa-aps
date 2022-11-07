@@ -1,0 +1,22 @@
+{% include 'main/base.html' %}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Nome do Aluno</th>
+            <th scope="col">Data de Pagamento</th>
+            <th scope="col">Forma de Pagamento</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for mensalidade in object_list %}
+        <tr>
+            <td>{{mensalidade.nome_aluno}}</td>
+            <td>{{mensalidade.data_pagamento}}</td> 
+            <td>{{mensalidade.forma_pagamento}}</td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>

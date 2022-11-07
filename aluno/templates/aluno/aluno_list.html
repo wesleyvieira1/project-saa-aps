@@ -1,0 +1,20 @@
+{% include 'main/base.html' %}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Nome do Aluno</th>
+            <th scope="col">Histórico</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for aluno in object_list %}
+        <tr>
+            <td>{{aluno.nome_aluno}}</td>
+            <td{{aluno.historico}}></td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>

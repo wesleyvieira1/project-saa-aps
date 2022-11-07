@@ -5,15 +5,15 @@ from base.validators import validateContato, validateCpf, validateDigits, valida
 
 class Usuario(models.Model):
     choices_usuario_departamento = (
-        ('1','Coordenação'),
-        ('2','Professor'),
-        ('3','Aluno')
+        ('Coordenação','Coordenação'),
+        ('Professor','Professor'),
+        ('Aluno','Aluno')
     )
 
     choices_usuario_turno = (
-        ('1','Manhã'),
-        ('2', 'Tarde'),
-        ('3','Integral')
+        ('Manhã','Manhã'),
+        ('Tarde', 'Tarde'),
+        ('Integral','Integral')
     )
 
     nome = models.CharField(max_length=100, blank=False, null=True, validators=[validateNome,validateNoDigits])
@@ -24,8 +24,8 @@ class Usuario(models.Model):
     endereco = models.CharField(max_length=100, blank=False, null=True, validators=[validateEndereco])
     data_nascimento = models.DateField()
     data_entrada = models.DateField()
-    turno = models.CharField(max_length=10, blank=False, null=True, choices=choices_usuario_turno)
-    departamento = models.CharField(max_length=10, blank=False, null=True, choices=choices_usuario_departamento)
+    turno = models.CharField(max_length=50, blank=False, null=True, choices=choices_usuario_turno)
+    departamento = models.CharField(max_length=50, blank=False, null=True, choices=choices_usuario_departamento)
 
 
     def __str__(self):

@@ -2,5 +2,5 @@
     {% csrf_token %}
     <h3>Você quer mesmo deletar o usuário "{{object}}"?</h3>
     <input type="submit" value="Excluir Usuário"></input>
-    <button href="{%url 'usuario.index'%}">Cancelar</button>
+    <button onclick="window.history.back();" class="btn btn-default" type="button">Cancelar</button>
 </form>

@@ -1,5 +1,5 @@
 from django.db import models
-from base.validators import validateContato, validateCpf, validateDigits, validateEmail, validateEndereco, validateFoto, validateHistorico, validateNoDigits, validateNome, validateRg, validateSenha
+from base.validators import validateDate, validateContato, validateCpf, validateDigits, validateEmail, validateEndereco, validateFoto, validateHistorico, validateNoDigits, validateNome, validateRg, validateSenha
 
 # Create your models here.
 
@@ -23,7 +23,7 @@ class Usuario(models.Model):
     rg = models.CharField(max_length=7, blank=False, null=True, unique=True, validators=[validateRg])
     endereco = models.CharField(max_length=100, blank=False, null=True, validators=[validateEndereco])
     data_nascimento = models.DateField()
-    data_entrada = models.DateField()
+    data_entrada = models.DateField(validators=[validateDate])
     turno = models.CharField(max_length=50, blank=False, null=True, choices=choices_usuario_turno)
     departamento = models.CharField(max_length=50, blank=False, null=True, choices=choices_usuario_departamento)
 

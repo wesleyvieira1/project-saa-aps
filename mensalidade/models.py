@@ -1,5 +1,6 @@
 from django.db import models
 from aluno.models import Aluno
+#from base.validators import validateDate
 
 class Mensalidade(models.Model):
     pagamento_choices=(
@@ -10,7 +11,7 @@ class Mensalidade(models.Model):
     )
 
     nome_aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
-    data_pagamento = models.DateField()
+    data_pagamento = models.DateField(unique=True)
     forma_pagamento = models.CharField(max_length=50, blank=False, null=True, choices=pagamento_choices)
 
     def __str__(self) -> str:

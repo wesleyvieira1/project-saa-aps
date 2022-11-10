@@ -10,7 +10,7 @@ class listagemProfessorView(ListView):
 class professorCreateView(CreateView):
     model = Professor
     form_class = professorForm
-    success_url = 'listagem/'
+    success_url = '/professores/'
     success_message = "Cadastrado com sucesso"
 
 

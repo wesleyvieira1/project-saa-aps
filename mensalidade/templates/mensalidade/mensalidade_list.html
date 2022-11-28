@@ -4,6 +4,7 @@
     <thead>
         <tr>
             <th scope="col">Nome do Aluno</th>
+            <th scope="col">Valor</th>
             <th scope="col">Data de Pagamento</th>
             <th scope="col">Forma de Pagamento</th>
             
@@ -13,6 +14,7 @@
         {% for mensalidade in object_list %}
         <tr>
             <td>{{mensalidade.nome_aluno}}</td>
+            <td>{{mensalidade.valor}}</td>
             <td>{{mensalidade.data_pagamento}}</td> 
             <td>{{mensalidade.forma_pagamento}}</td> 
         </tr>

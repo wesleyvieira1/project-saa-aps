@@ -4,6 +4,7 @@
     <thead>
         <tr>
             <th scope="col">Nome do Aluno</th>
+            <th scope="col">CPF do Aluno</th>
             <th scope="col">Histórico</th>
             
         </tr>
@@ -12,6 +13,7 @@
         {% for aluno in object_list %}
         <tr>
             <td>{{aluno.nome_aluno}}</td>
+            <td>{{aluno.cpf_aluno}}</td> 
             <td{{aluno.historico}}></td> 
         </tr>
         {% endfor %}

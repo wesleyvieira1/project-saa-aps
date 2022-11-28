@@ -4,4 +4,4 @@ class alunoForm(forms.ModelForm):
     historico = forms.FileField(label='Histórico', required=False)
     class Meta:
         model = Aluno
-        fields = ['nome_aluno','historico']
+        fields = ['nome_aluno','cpf_aluno','historico']

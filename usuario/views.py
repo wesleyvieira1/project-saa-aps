@@ -11,6 +11,7 @@ from usuario.forms import usuarioForm, usuarioSysForm
 from django.contrib.auth import login
 from django.contrib.messages.views import SuccessMessageMixin
 from main import urls
+from braces.views import GroupRequiredMixin
 
 #Listagem dos Usuários
 class listagemUsuariosView(ListView):
@@ -19,8 +20,9 @@ class listagemUsuariosView(ListView):
 
 
 #Cadastro dos Usuários
-class usuarioCreateView(SuccessMessageMixin,CreateView):
+class usuarioCreateView(GroupRequiredMixin,SuccessMessageMixin,CreateView):
     model = Usuario
+    group_required = u"coord"
     form_class = usuarioForm
     success_url = '/usuarios/novo/register'
     success_message = "Cadastrado com sucesso"
@@ -30,15 +32,17 @@ class usuarioCreateView(SuccessMessageMixin,CreateView):
         return self.success_message 
 #Editar Usuários
 
-class usuarioUpdateView(UpdateView):
+class usuarioUpdateView(GroupRequiredMixin,UpdateView):
     model = Usuario
+    group_required = u"coord"
     form_class = usuarioForm
     success_url = '/usuarios/'
 
 #Excluir Usuários
 
-class usuarioDeleteView(DeleteView):
+class usuarioDeleteView(GroupRequiredMixin,DeleteView):
     model = Usuario
+    group_required = u"coord"
     success_url = '/usuarios/'
 
 

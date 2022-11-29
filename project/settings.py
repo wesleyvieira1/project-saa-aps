@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'disciplina',
     'django_cleanup.apps.CleanupConfig',
     'aluno',
-    'mensalidade'
+    'mensalidade',
+    'turma'
     #'bootstrapform'
 ]
 

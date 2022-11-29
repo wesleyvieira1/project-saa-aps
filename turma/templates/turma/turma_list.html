@@ -1,0 +1,24 @@
+{% include 'main/base.html' %}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Ano da Turma</th>
+            <th scope="col">Professor</th>
+            <th scope="col">Disciplina</th>
+            <th scope="col">Aluno</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for turma in object_list %}
+        <tr>
+            <td>{{turma.ano_turma}}</td>
+            <td>{{turma.nome_professor}}</td> 
+            <td>{{turma.nome_disciplina}}</td>
+            <td>{{turma.nome_aluno}}</td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>

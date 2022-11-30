@@ -7,6 +7,9 @@
             <th scope="col">Professor</th>
             <th scope="col">Disciplina</th>
             <th scope="col">Aluno</th>
+            <th scope="col">Registrar Aulas</th>
+            
+
             
         </tr>
     </thead>
@@ -16,7 +19,10 @@
             <td>{{turma.ano_turma}}</td>
             <td>{{turma.nome_professor}}</td> 
             <td>{{turma.nome_disciplina}}</td>
-            <td>{{turma.nome_aluno}}</td> 
+            <td>{{turma.nome_aluno}}</td>
+            <td>
+                <a href="{%url 'registro.index' %}">Registro de Aula</a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>

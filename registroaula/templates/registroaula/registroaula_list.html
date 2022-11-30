@@ -1,0 +1,25 @@
+{% include 'main/base.html' %}
+
+<table class="table table-dark">
+    <thead>
+        <button href="{%url 'registro.novo' %}">Novo Registro</button>
+        <tr>
+            <th scope="col">Data Registro</th>
+            <th scope="col">Nº Aulas</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Professor</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for registroaula in object_list %}
+        <tr>
+            <td>{{registroaula.data_aula}}</td>
+            <td>{{registroaula.num_aulas}}</td>
+            <td>{{registroaula.descricao}}</td>
+            <td>{{registroaula.nome_professor}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>

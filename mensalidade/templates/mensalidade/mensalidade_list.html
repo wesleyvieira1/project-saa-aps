@@ -7,6 +7,7 @@
             <th scope="col">Valor</th>
             <th scope="col">Data de Pagamento</th>
             <th scope="col">Forma de Pagamento</th>
+            <th scope="col">Mês Referente</th>
             
         </tr>
     </thead>
@@ -16,7 +17,8 @@
             <td>{{mensalidade.nome_aluno}}</td>
             <td>{{mensalidade.valor}}</td>
             <td>{{mensalidade.data_pagamento}}</td> 
-            <td>{{mensalidade.forma_pagamento}}</td> 
+            <td>{{mensalidade.forma_pagamento}}</td>
+            <td>{{mensalidade.mes_referente}}</td>  
         </tr>
         {% endfor %}
     </tbody>

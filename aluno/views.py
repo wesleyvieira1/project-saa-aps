@@ -5,12 +5,15 @@ from .forms import alunoForm
 from usuario.forms import usuarioForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from braces.views import GroupRequiredMixin
 
-class listagemAlunoView(ListView):
+class listagemAlunoView(GroupRequiredMixin,ListView):
+    group_required = [u'coord',u'professor',u'aluno']
     model = Aluno
     queryset = Aluno.objects.all().order_by('nome_aluno')
 
-class alunoCreateView(CreateView):
+class alunoCreateView(GroupRequiredMixin,CreateView):
+    group_required = [u'coord']
     model = Aluno
     form_class = alunoForm
     success_url = '/alunos/'
